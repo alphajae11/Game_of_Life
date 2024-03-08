@@ -1,5 +1,15 @@
+import os
+
+def get_seed_file_path():
+    # Get the directory where the script is located
+    script_dir = os.path.dirname(__file__)
+    # Build the path to the seed file
+    seed_file_path = os.path.join(script_dir, 'input', 'seed.txt')
+    return seed_file_path
+
 def main():
-    game_of_life('game_of_life/input/seed.txt', 10)
+    seed_file = get_seed_file_path()
+    game_of_life(seed_file, 10)
 
 
 def game_of_life(seed_file, generations=10):
